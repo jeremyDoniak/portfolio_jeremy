@@ -33,6 +33,13 @@
         font-size: 0.75em;
     }
 
+    footer img {
+            display: block;
+            max-width:150px;
+            max-height:100%;
+            width: auto;
+            height: auto;
+        }
 /* **************************************** HOME - HEADER **************************************** */
 
     #home-header #header-img {
@@ -59,12 +66,6 @@
             top: 50%;
         }
 
-/* **************************************** HOME - FOOTER **************************************** */
+/* **************************************** HOME - BODY **************************************** */
 
-    footer img {
-        display: block;
-        max-width:150px;
-        max-height:100%;
-        width: auto;
-        height: auto;
-    }
+

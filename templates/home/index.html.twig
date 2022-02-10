@@ -14,31 +14,51 @@
 
     <section>
         <div class="row">
-            <div class="col-8 offset-2 py-5">
+            <div class="col-8 offset-2 p-3">
                 <h3>Projets</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla at dolorem unde iure nam autem veniam debitis eveniet ipsam, maiores ab? Repellat mollitia qui delectus, sit accusamus maiores sunt enim.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla at dolorem unde iure nam autem veniam debitis eveniet ipsam, maiores ab? Repellat mollitia qui delectus, sit accusamus maiores sunt enim.</p>
             </div>
+            {% for projet in projets %}
+                    <div class="col-3 offset-2 p-3">
+                        <div class="card">
+                            <img src="{{ asset('img/' ~ projet.img) }}" class="card-img-top" alt="photo principale {{ projet.titre }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ projet.titre }}</h5>
+                                <p class="card-text">{{ projet.description|u.truncate(90, '...', false)  }}</p>
+                            </div>
+                            <div class="card-body text-center">
+                                <a href="#" class="btn btn-outline-secondary">Voir plus</a>
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
         </div>
     </section>
 
     <section>
         <div class="row bg-light">
-            <div class="col-8 offset-2 py-5">
+            <div class="col-8 offset-2 p-3">
                 <h3>Compétences</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla at dolorem unde iure nam autem veniam debitis eveniet ipsam, maiores ab? Repellat mollitia qui delectus, sit accusamus maiores sunt enim.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla at dolorem unde iure nam autem veniam debitis eveniet ipsam, maiores ab? Repellat mollitia qui delectus, sit accusamus maiores sunt enim.</p>
             </div>
+            {% for competence in competences %}
+                    <div class="col-1 offset-2 p-3">
+                        <h5>{{ competence.titre }}</h5>
+                        <p>{{ competence.description|u.truncate(90, '...', false)  }}</p>
+                    </div>
+            {% endfor %}
         </div>
     </section>
 
     <section>
         <div class="row">
-            <div class="col-8 offset-2 py-5">
-                <h3>À propos</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla at dolorem unde iure nam autem veniam debitis eveniet ipsam, maiores ab? Repellat mollitia qui delectus, sit accusamus maiores sunt enim.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla at dolorem unde iure nam autem veniam debitis eveniet ipsam, maiores ab? Repellat mollitia qui delectus, sit accusamus maiores sunt enim.</p>
+            <div class="col-8 offset-2 p-3">
+                <h3>À Propos</h3>
             </div>
+            {% for propo in propos %}
+                    <div class="col-8 offset-2 p-3">
+                        <h5>{{ propo.titre }}</h5>
+                        <p>{{ propo.description|u.truncate(90, '...', false)  }}</p>
+                    </div>
+            {% endfor %}
         </div>
     </section>
 

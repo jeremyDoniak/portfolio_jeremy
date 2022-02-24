@@ -1,0 +1,30 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Propos{% endblock %}
+
+{% block body %}
+    <h1>Propos</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ propo.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ propo.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ propo.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('propos_index') }}">back to list</a>
+
+    <a href="{{ path('propos_edit', {'id': propo.id}) }}">edit</a>
+
+    {{ include('propos/_delete_form.html.twig') }}
+{% endblock %}

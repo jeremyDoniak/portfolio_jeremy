@@ -17,11 +17,13 @@ class HomeController extends AbstractController
         $competence = $competencesRepository->findAll();
         $projet = $projetsRepository->findAll();
         $propo = $proposRepository->findAll();
+        $form = $this->createForm(ContactType::class);
 
         return $this->render('home/index.html.twig', [
             'competences' => $competence,
             'projets' => $projet,
-            'propos' => $propo
+            'propos' => $propo,
+            'contactForm' => $form->createView(),
         ]);
     }
 }

@@ -5,6 +5,7 @@
         padding: 0;
         list-style-type: none;
         text-decoration: none !important;
+        box-sizing: border-box;
     }
 
 /* **************************************** GLOBAL **************************************** */
@@ -68,4 +69,8 @@
 
 /* **************************************** HOME - BODY **************************************** */
 
-
+    .card-img-top {
+        width: 100%;
+        height: 20vw;
+        object-fit: cover;
+    }

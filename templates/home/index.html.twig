@@ -17,20 +17,22 @@
             <div class="col-8 offset-2 p-3">
                 <h3>Projets</h3>
             </div>
-            {% for projet in projets %}
-            <div class="col-3 offset-2 p-3">
-                <div class="card">
-                    <img src="{{ asset('img/' ~ projet.img) }}" class="card-img-top" alt="photo principale {{ projet.titre }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ projet.titre }}</h5>
-                        <p class="card-text">{{ projet.description|u.truncate(90, '...', false)  }}</p>
-                    </div>
-                    <div class="card-body text-center">
-                        <a href="#" class="btn btn-outline-secondary">Voir plus</a>
+            <div class="col-8 offset-2 p-3 d-inline-flex">
+                {% for projet in projets %}
+                <div class="col-4 p-3">
+                    <div class="card">
+                        <img src="{{ asset('img/' ~ projet.img) }}" class="card-img-top" alt="photo principale {{ projet.titre }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ projet.titre }}</h5>
+                            <p class="card-text">{{ projet.description|u.truncate(40, '...', false)  }}</p>
+                        </div>
+                        <div class="card-body text-center">
+                            <a href="#" class="btn btn-outline-secondary">Voir plus</a>
+                        </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </section>
 
@@ -39,12 +41,17 @@
             <div class="col-8 offset-2 p-3">
                 <h3>Compétences</h3>
             </div>
-            {% for competence in competences %}
-                    <div class="col-1 offset-2 p-3">
-                        <h5>{{ competence.titre }}</h5>
-                        <p>{{ competence.description|u.truncate(90, '...', false)  }}</p>
-                    </div>
-            {% endfor %}
+            <div class="col-8 offset-2 p-3 d-inline-flex">
+                {% for competence in competences %}
+                        <div class="col-4 p-3">
+                            <h5>{{ competence.titre }}</h5>
+                            <ul class="col-4 p-3">
+                                <li><img src="{{ asset('img/' ~ competence.img) }}" alt="photo {{ competence.titre }}"></li>
+                                <li>{{ competence.description  }}</li>
+                            </ul>
+                        </div>
+                {% endfor %}
+            </div>
         </div>
     </section>
 
@@ -55,8 +62,7 @@
             </div>
             {% for propo in propos %}
                     <div class="col-8 offset-2 p-3">
-                        <h5>{{ propo.titre }}</h5>
-                        <p>{{ propo.description|u.truncate(90, '...', false)  }}</p>
+                        <p>{{ propo.description  }}</p>
                     </div>
             {% endfor %}
         </div>

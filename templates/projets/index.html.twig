@@ -21,7 +21,7 @@
                 <td>{{ projet.id }}</td>
                 <td>{{ projet.titre }}</td>
                 <td>{{ projet.description }}</td>
-                <td><img src="{{ asset('img/' ~ projet.img) }}" alt="photo principale {{ projet.titre }}"></td>
+                <td><img src="{{ asset('img/' ~ projet.img) }}" alt="photo {{ projet.titre }}"></td>
                 <td>
                     <a href="{{ path('projets_show', {'id': projet.id}) }}">show</a>
                     <a href="{{ path('projets_edit', {'id': projet.id}) }}">edit</a>

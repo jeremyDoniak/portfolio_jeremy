@@ -19,6 +19,9 @@ class Competences
     #[ORM\Column(type: 'text')]
     private $description;
 
+    #[ORM\Column(type: 'string', length: 45, nullable: true)]
+    private $img;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Competences
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(?string $img): self
+    {
+        $this->img = $img;
 
         return $this;
     }
